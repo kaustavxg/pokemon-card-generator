@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Pokemon Card Generator</h1>
+    <div class="pokemon-box">
+        <div class="input-section">
+            <input
+                type="number"
+                id="pokemon-id"
+                placeholder="enter the number"
+                autocomplete="off"
+            >
+        </div>
+        <div class="category-section">
+            <select name="pokemon" id="pokemon-type" autocomplete="off">
+                <!-- <option value="none">None</option> -->
+                <option value="grass">Grass</option>
+                <option value="fire">Fire</option>
+                <option value="dragon">Dragon</option>
+                <option value="Electric">Electric</option>
+            </select>
+
+        </div>
+        <div>
+            <button id="submit">Submit</button>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
