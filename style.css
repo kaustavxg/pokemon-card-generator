@@ -274,3 +274,30 @@ h1 {
         font-size: 0.8rem !important;
     }
 }
+
+/* Footer styling */
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+}
+
+.footer h3 {
+    color: white !important;
+    font-size: 0.9rem !important;
+    font-weight: 300 !important;
+    margin: 0 !important;
+    opacity: 0.8;
+}
+
+.developer-link {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 3px;
+    transition: opacity 0.2s ease;
+}
+
+.developer-link:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+}
