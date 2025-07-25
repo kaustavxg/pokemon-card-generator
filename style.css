@@ -1,4 +1,276 @@
-/* *{
-    background-color: #212121;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
     color: white;
-} */
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.pokemon-box {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 500px;
+    margin: 0 auto 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.input-section, .category-section {
+    margin-bottom: 20px;
+}
+
+#pokemon-id {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    background: white;
+}
+
+#pokemon-id:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+#pokemon-type {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 16px;
+    background: white;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+#pokemon-type:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+#submit {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+#submit:active {
+    transform: translateY(0);
+}
+
+.card-box {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.card-box h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+/* Enhanced Pokemon card styling */
+.card-box > div {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0) !important;
+    border: none !important;
+    border-radius: 20px !important;
+    padding: 25px 20px !important;
+    margin: 15px !important;
+    display: inline-block !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+    transition: all 0.3s ease !important;
+    vertical-align: top !important;
+    width: 280px !important;
+    min-height: 400px !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.card-box > div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+    border-radius: 20px 20px 0 0;
+}
+
+.card-box > div:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Pokemon name styling */
+.card-box h3 {
+    color: #2c3e50 !important;
+    margin: 10px 0 20px 0 !important;
+    text-transform: capitalize !important;
+    font-size: 1.4rem !important;
+    font-weight: bold !important;
+    text-shadow: none !important;
+}
+
+/* Pokemon image styling */
+.card-box img {
+    border-radius: 15px !important;
+    background: radial-gradient(circle, #f8f9fa, #e9ecef) !important;
+    padding: 15px !important;
+    margin-bottom: 15px !important;
+    border: 3px solid #dee2e6 !important;
+    transition: transform 0.3s ease !important;
+}
+
+.card-box img:hover {
+    transform: scale(1.1) !important;
+}
+
+/* Pokemon ID styling */
+.card-box span:first-of-type {
+    display: block !important;
+    background: linear-gradient(45deg, #667eea, #764ba2) !important;
+    color: white !important;
+    padding: 6px 12px !important;
+    border-radius: 15px !important;
+    font-size: 0.9rem !important;
+    font-weight: bold !important;
+    margin-bottom: 15px !important;
+    width: fit-content !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Info text styling (height, weight) */
+.card-box p {
+    color: #555 !important;
+    margin: 8px 0 !important;
+    font-size: 0.95rem !important;
+    padding: 4px 8px !important;
+    background: rgba(102, 126, 234, 0.1) !important;
+    border-radius: 8px !important;
+    display: inline-block !important;
+    margin-right: 5px !important;
+}
+
+/* HP and Abilities styling */
+.card-box span:not(:first-of-type) {
+    display: block !important;
+    color: #333 !important;
+    margin: 10px 0 5px 0 !important;
+    font-size: 0.9rem !important;
+    padding: 8px 12px !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+}
+
+/* HP specific styling */
+.card-box span:nth-of-type(2) {
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e) !important;
+    color: white !important;
+    width: fit-content !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 10px !important;
+}
+
+/* Abilities specific styling */
+.card-box span:last-of-type {
+    background: linear-gradient(45deg, #4ecdc4, #44a08d) !important;
+    color: white !important;
+    font-size: 0.85rem !important;
+    line-height: 1.3 !important;
+    text-transform: capitalize !important;
+    word-wrap: break-word !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .pokemon-box {
+        margin: 0 10px 20px;
+        padding: 20px;
+    }
+    
+    .card-box > div {
+        width: 240px !important;
+        margin: 10px !important;
+        padding: 20px 15px !important;
+        min-height: 380px !important;
+    }
+    
+    .card-box h3 {
+        font-size: 1.2rem !important;
+    }
+    
+    .card-box img {
+        height: 90px !important;
+        width: 90px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    
+    .card-box > div {
+        width: 200px !important;
+        margin: 8px !important;
+        padding: 18px 12px !important;
+        min-height: 350px !important;
+    }
+    
+    .card-box h3 {
+        font-size: 1.1rem !important;
+    }
+    
+    .card-box img {
+        height: 80px !important;
+        width: 80px !important;
+    }
+    
+    .card-box span:last-of-type {
+        font-size: 0.8rem !important;
+    }
+}
